@@ -187,7 +187,7 @@ def main(args):
 
         safety_rate = (i * safety_rate + is_safe) / (i + 1)
 
-        loss_np, acc_np, loss_h_safe, loss_h_dang, loss_deriv_safe, loss_deriv_dang, loss_deriv_mid = trainer.train_cbf_and_u(goal=new_goal)
+        loss_np, acc_np, loss_h_safe, loss_h_dang, loss_deriv_safe, loss_deriv_dang, loss_deriv_mid = trainer.train_cbf_and_u(goal=new_goal, batch_size=5000)
         time_iter = t.tocvalue()
         print(
             'step, {}, loss, {:.3f}, safety rate, {:.3f}, goal reached, {:.3f}, acc, {}, '

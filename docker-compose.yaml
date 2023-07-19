@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  pytorch:
+    build: .
+    tty: true
+    ipc: "host"
+    volumes: 
+     - ./src:/app/src 
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
